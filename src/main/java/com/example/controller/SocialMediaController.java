@@ -60,7 +60,7 @@ public class SocialMediaController {
         return ResponseEntity.status(HttpStatus.OK).body(a);
     }
 
-    @PatchMapping("/messages")
+    @PostMapping("/messages")
     public ResponseEntity<Message> createMessage(@RequestBody Message message){
         if(accountService.checkId(message.getPostedBy()) == false){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
